@@ -1,0 +1,24 @@
+<ion-content padding class="ololo">
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-spinner *ngIf="show" mode="md" color="primary" name="dots"></ion-spinner>
+
+  <div *ngIf='noConnection'>
+    <h3>No internet connection!</h3>
+    <p>
+      Turn on internet and pull to refresh.
+    </p>
+  </div>
+
+  <div>
+    <img src="assets/img/medkratom_logo.png" alt="">
+  </div>
+
+  <button *ngIf='!noConnection' ion-button block (click)="load()">
+    Explore Kratom
+  </button>
+
+</ion-content>
